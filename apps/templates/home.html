@@ -7,6 +7,9 @@
 
 <body>
   <main>
+    <div class="nittei">
+      <div id="calendar"></div>
+    </div>
     <div class="logo_wrapper">
       <div class="logo">
 
@@ -22,5 +25,19 @@
     </div>
   </main>
 </body>
+<script>
+  window.onload = function() {
+    var current = new Date();
+    var year = current.getFullYear();
+    var month = current.getMonth() + 1;
+    var date = current.getDate();
+    var cTitle = document.createElement('div');
+    cTitle.className = 'calendar-header__title';
+    var cTitleText = document.createTextNode(year + '年' + month + '月' + date + '日');
+    cTitle.appendChild(cTitleText);
+    var wrapper = document.getElementById('calendar');
+    wrapper.appendChild(cTitle);
+  }
+</script>
 
 </html>
